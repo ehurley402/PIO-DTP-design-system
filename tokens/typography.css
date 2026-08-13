@@ -1,0 +1,101 @@
+/* ==========================================================================
+   Explore Treatment Paths — Typography tokens
+   AUTHORITATIVE (source: Brand Guidelines, NW013-3-Campaign, 2026):
+   - Typeface: Inter (Light/Regular/Medium/Bold) for all functional text.
+   - Display accent: italic serif for emotive lines — PP Editorial New Italic,
+     with Libre Baskerville Italic named as the explicit fallback.
+   - Role → weight mapping shown in the source specimen: eyebrow = Inter
+     Light, display accent = italic serif, heading = Inter Bold,
+     body = Inter Medium.
+
+   ASSUMPTION — the source shows this hierarchy at a fixed mockup size but
+   does NOT give a numeric point/pixel scale (unlike the PIO system's
+   authoritative 60/40/18pt scale). Sizes below are a conservative derivation
+   for a patient-facing web page; confirm with the brand owner before
+   production rollout.
+   ========================================================================== */
+
+:root {
+  /* ---- Font families ---------------------------------------------------- */
+  --font-body: "Inter", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display-accent: "PP Editorial New", "Libre Baskerville", Georgia, "Times New Roman", serif;
+
+  /* ---- Weights (authoritative role mapping; numeric values standard) --- */
+  --weight-light:   300;
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-bold:    700;
+
+  /* ---- Type scale (ASSUMPTION — see note above) ------------------------- */
+  --text-eyebrow:      13px; /* Inter Medium, uppercase, wide tracking       */
+  --text-display:      48px; /* italic display accent (PP Editorial/Baskerville) */
+  --text-heading:      32px; /* Inter Bold                                   */
+  --text-subheading:   22px; /* Inter Bold                                   */
+  --text-body-size:    16px; /* Inter Medium (per source spec)               */
+  --text-caption:      13px; /* Inter Regular                                */
+
+  --leading-tight:  1.15;
+  --leading-snug:   1.3;
+  --leading-normal: 1.6;
+
+  --tracking-eyebrow: 0.12em;
+}
+
+/* Base element defaults — opt in with `.etp` or `body.etp`, mirrors the
+   PIO system's convention of not forcing global element resets. */
+.etp, body.etp {
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  color: var(--text-body);
+  line-height: var(--leading-normal);
+}
+
+.etp-eyebrow {
+  font-family: var(--font-body);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--text-link);
+}
+
+.etp-display-accent {
+  font-family: var(--font-display-accent);
+  font-style: italic;
+  font-weight: var(--weight-regular);
+  font-size: var(--text-display);
+  line-height: var(--leading-tight);
+  color: var(--text-heading);
+}
+
+.etp-heading {
+  font-family: var(--font-body);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-heading);
+  line-height: var(--leading-tight);
+  color: var(--text-heading);
+}
+
+.etp-subheading {
+  font-family: var(--font-body);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-subheading);
+  line-height: var(--leading-snug);
+  color: var(--text-heading);
+}
+
+.etp-body {
+  font-family: var(--font-body);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-body-size);
+  line-height: var(--leading-normal);
+  color: var(--text-body);
+}
+
+.etp-caption {
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-caption);
+  line-height: var(--leading-normal);
+  color: var(--text-muted);
+}

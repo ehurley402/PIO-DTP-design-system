@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Patient landing page" description="Unbranded disease-state patient education landing page — hero, condition overview, treatment-options overview, FAQ, sponsorship disclaimer. No device name, logo, or claim belongs in the body content." -->
+<helmet>
+<link rel="stylesheet" href="../../styles.css">
+<script src="./ds-base.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--font-body);color:var(--text-body)}
+.page{max-width:var(--content-max);margin:0 auto;padding:0 var(--space-6)}
+.hero{background:var(--etp-gradient);padding:var(--section-y) 0;color:var(--text-on-inverse)}
+.hero .eyebrow{color:rgba(255,255,255,.85)}
+.hero h1{font-family:var(--font-display-accent);font-style:italic;font-weight:var(--weight-regular);font-size:var(--text-display);line-height:var(--leading-tight);margin:10px 0 18px;color:#fff}
+.hero h2{font-family:var(--font-body);font-weight:var(--weight-bold);font-size:28px;line-height:1.3;margin:0 0 14px;max-width:var(--prose-max);color:#fff}
+.hero p{font-size:var(--text-body-size);font-weight:var(--weight-medium);line-height:var(--leading-normal);max-width:var(--prose-max);margin:0 0 28px;color:rgba(255,255,255,.92)}
+.cta{display:inline-flex;align-items:center;justify-content:center;padding:13px 28px;border-radius:var(--radius-pill);background:#fff;color:var(--etp-blue);font-weight:var(--weight-bold);font-size:15px;text-decoration:none}
+section{padding:var(--section-y) 0}
+.section-eyebrow{margin:0 0 10px}
+.section-heading{font-family:var(--font-body);font-weight:var(--weight-bold);font-size:var(--text-heading);color:var(--text-heading);margin:0 0 16px;max-width:var(--prose-max)}
+.section-body{font-size:var(--text-body-size);font-weight:var(--weight-medium);line-height:var(--leading-normal);color:var(--text-body);max-width:var(--prose-max);margin:0}
+.options{background:var(--surface-subtle)}
+.options-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-5);margin-top:var(--space-6)}
+.option-card{background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:var(--space-5);box-shadow:var(--shadow-sm)}
+.option-card h3{font-family:var(--font-body);font-weight:var(--weight-bold);font-size:18px;color:var(--text-heading);margin:0 0 8px}
+.option-card p{font-size:14px;line-height:1.55;color:var(--text-muted);margin:0}
+.faq-item{border-top:1px solid var(--border-subtle);padding:20px 0}
+.faq-item:last-child{border-bottom:1px solid var(--border-subtle)}
+.faq-item h4{font-family:var(--font-body);font-weight:var(--weight-bold);font-size:16px;color:var(--text-heading);margin:0 0 8px}
+.faq-item p{font-size:14px;line-height:1.55;color:var(--text-body);margin:0;max-width:var(--prose-max)}
+.site-footer{border-top:1px solid var(--border-default);padding:var(--space-6) 0}
+.disclaimer{border-top:1px solid var(--border-default);padding-top:var(--space-4);font-size:12px;line-height:1.5;color:var(--text-muted)}
+.header-bar{padding:24px 0;border-bottom:1px solid var(--border-subtle)}
+.wordmark{font-size:20px;white-space:nowrap;color:var(--text-heading)}
+.wordmark .regular{font-weight:var(--weight-regular)}
+.wordmark .bold{font-weight:var(--weight-bold)}
+.brand-row{display:flex;align-items:center;gap:12px}
+</style>
+</helmet>
+<header class="header-bar">
+<div class="page brand-row">
+<img src="../../assets/logos/icon.png" alt="Explore Treatment Paths" width="36" height="36">
+<span class="wordmark"><span class="regular">Explore</span><span class="bold">Treatment</span><span class="regular">Paths.org</span></span>
+</div>
+</header>
+
+<section class="hero">
+<div class="page">
+<p class="etp-eyebrow eyebrow">Education. Empowerment.</p>
+<h1>your path forward</h1>
+<h2>Understanding your [condition] treatment options can help bring clarity when it matters most.</h2>
+<p>Every journey is unique, and every conversation has the potential to reveal something new. Taking the time to learn about available treatment approaches can help you ask better questions, explore more possibilities, and move forward with greater confidence and hope.</p>
+<a class="cta" href="#options">Explore your options</a>
+</div>
+</section>
+
+<section>
+<div class="page">
+<p class="etp-eyebrow section-eyebrow">What to know</p>
+<h2 class="section-heading">What is [condition]?</h2>
+<p class="section-body">Plain-language overview of the condition goes here — what it is, how it's typically found, and why understanding options matters. Keep it factual and reassuring, written for a patient reading this for the first time.</p>
+</div>
+</section>
+
+<section class="options" id="options">
+<div class="page">
+<p class="etp-eyebrow section-eyebrow">Your options</p>
+<h2 class="section-heading">Treatment approaches to ask your doctor about</h2>
+<p class="section-body">A neutral, side-by-side overview — not a recommendation. Every situation is different; use this as a starting point for a conversation with your care team.</p>
+<div class="options-grid">
+<div class="option-card">
+<h3>[Treatment category 1]</h3>
+<p>Plain-language description of what this approach generally involves.</p>
+</div>
+<div class="option-card">
+<h3>[Treatment category 2]</h3>
+<p>Plain-language description of what this approach generally involves.</p>
+</div>
+<div class="option-card">
+<h3>[Treatment category 3]</h3>
+<p>Plain-language description of what this approach generally involves.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="page">
+<p class="etp-eyebrow section-eyebrow">Common questions</p>
+<h2 class="section-heading">Frequently asked questions</h2>
+<div class="faq-item">
+<h4>[Question one patients often ask]</h4>
+<p>Plain-language answer, factual and non-promotional.</p>
+</div>
+<div class="faq-item">
+<h4>[Question two patients often ask]</h4>
+<p>Plain-language answer, factual and non-promotional.</p>
+</div>
+<div class="faq-item">
+<h4>[Question three patients often ask]</h4>
+<p>Plain-language answer, factual and non-promotional.</p>
+</div>
+</div>
+</section>
+
+<footer class="site-footer">
+<div class="page">
+<p class="disclaimer">[Sponsorship disclaimer — exact wording pending Legal/Regulatory confirmation]</p>
+</div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:2700}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

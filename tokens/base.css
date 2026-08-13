@@ -1,0 +1,14 @@
+/* ==========================================================================
+   Explore Treatment Paths — minimal opt-in element defaults.
+   Consumers that want plain elements to inherit the system automatically
+   can add class="etp" to <body>; nothing here applies globally on its own.
+   ========================================================================== */
+
+.etp, body.etp {
+  background: var(--surface-page);
+  margin: 0;
+}
+
+.etp a { color: var(--text-link); }
+.etp img { max-width: 100%; display: block; }
+.etp *, .etp *::before, .etp *::after { box-sizing: border-box; }

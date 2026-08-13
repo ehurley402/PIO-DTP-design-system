@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Explore Treatment Paths — Color tokens
+   AUTHORITATIVE palette from Brand Guidelines (NW013-3-Campaign, 2026).
+   HEX/RGB/CMYK values are verbatim from the source. Do not invent or
+   "correct" values.
+
+   This is a standalone, unbranded patient-education identity — it does not
+   share tokens with, and must never reference, the Precision IO / NeuWave /
+   Epione brand system. No device name, logo, or sub-brand accent color
+   belongs anywhere in this system. See README.md.
+   ========================================================================== */
+
+:root {
+  /* ---- Base palette (the 5 authoritative colors) ---------------------- */
+  --etp-blue:   #064E85; /* primary blue — core identity                   */
+  --etp-navy:   #052D4A; /* dark navy — deep contrast / dark surfaces      */
+  --etp-teal:   #4DC4D1; /* teal — icon mark, light accent                 */
+  --etp-green:  #7DBE69; /* green — icon mark, light accent                */
+  --etp-orange: #F15E25; /* orange — accent, use sparingly                 */
+  --etp-white:  #FFFFFF;
+  --etp-black:  #000000;
+
+  /* ---- Gradient (ASSUMPTION — direction not legible in the source page;
+     confirm exact angle/stops with the brand owner before production) --- */
+  --etp-gradient: linear-gradient(135deg, var(--etp-blue), var(--etp-navy));
+
+  /* ---- Derived tints/hovers (ASSUMPTION — not in the source guidelines;
+     conservative single-hue derivations for hover/fill states. Flagged;
+     confirm before production rollout.) --------------------------------- */
+  --etp-blue-hover:   #054470; /* blue darkened ~10% for hover/press        */
+  --etp-blue-tint:    #EAF2F7; /* near-white blue wash for subtle surfaces  */
+  --etp-teal-hover:   #3BB0C0;
+  --etp-green-hover:  #6BAA58;
+  --etp-orange-hover: #D94F1A;
+
+  /* ---- Text (ASSUMPTION — the source specifies brand colors, not a
+     dedicated body-text color; derived from --etp-navy for readable,
+     accessible contrast on white, distinct from pure black) ------------- */
+  --text-heading: var(--etp-navy);
+  --text-body:    #223A4D; /* navy-tinted neutral, ~9:1 contrast on white   */
+  --text-muted:   #5A7182;
+  --text-on-inverse: var(--etp-white);
+  --text-link:    var(--etp-blue);
+
+  /* ---- Surfaces --------------------------------------------------------- */
+  --surface-page:    var(--etp-white);
+  --surface-card:     var(--etp-white);
+  --surface-subtle:  var(--etp-blue-tint);
+  --surface-inverse: var(--etp-blue);
+  --surface-inverse-deep: var(--etp-navy);
+
+  /* ---- Lines & borders (ASSUMPTION) ------------------------------------- */
+  --border-subtle:  var(--etp-blue-tint);
+  --border-default: #C9DCE6;
+
+  /* ---- Focus ring (ASSUMPTION — derived for accessibility) -------------- */
+  --focus-ring: var(--etp-teal);
+}

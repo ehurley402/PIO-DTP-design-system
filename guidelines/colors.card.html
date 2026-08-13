@@ -1,0 +1,32 @@
+<!-- @dsCard group="Colors" viewport="700x260" name="Core palette" subtitle="5 authoritative colors + gradient — source: NW013-3-Campaign brand guidelines" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; font-family: var(--font-body); background: var(--etp-white); }
+  .row { display: flex; gap: var(--space-3); padding: var(--space-5); }
+  .sw { flex: 1; }
+  .chip { height: 78px; border-radius: var(--radius-md); border: 1px solid rgba(0,0,0,.06); }
+  .name { font-size: 13px; font-weight: var(--weight-medium); color: var(--text-body); margin-top: 10px; }
+  .meta { font-size: 12px; color: var(--text-muted); margin-top: 2px; font-variant-numeric: tabular-nums; }
+  .gradient-row { padding: 0 var(--space-5) var(--space-5); }
+  .gradient-bar { height: 40px; border-radius: var(--radius-sm); background: var(--etp-gradient); }
+  .gradient-label { font-size: 11px; color: var(--text-muted); margin-top: 6px; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw"><div class="chip" style="background:#064E85"></div><div class="name">Blue</div><div class="meta">#064E85</div></div>
+    <div class="sw"><div class="chip" style="background:#052D4A"></div><div class="name">Navy</div><div class="meta">#052D4A</div></div>
+    <div class="sw"><div class="chip" style="background:#4DC4D1"></div><div class="name">Teal</div><div class="meta">#4DC4D1</div></div>
+    <div class="sw"><div class="chip" style="background:#7DBE69"></div><div class="name">Green</div><div class="meta">#7DBE69</div></div>
+    <div class="sw"><div class="chip" style="background:#F15E25"></div><div class="name">Orange</div><div class="meta">#F15E25 · use sparingly</div></div>
+  </div>
+  <div class="gradient-row">
+    <div class="gradient-bar"></div>
+    <div class="gradient-label">Gradient — ASSUMPTION: direction/stops not fully legible in the source PDF; confirm before production.</div>
+  </div>
+</body>
+</html>

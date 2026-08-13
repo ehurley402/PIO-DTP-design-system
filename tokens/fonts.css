@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Explore Treatment Paths — Font loading
+   AUTHORITATIVE typefaces from Brand Guidelines (NW013-3-Campaign, 2026):
+   Inter (Light/Regular/Medium/Bold) for all functional text, plus an italic
+   display accent for emotive lines (e.g. "your path forward"), spec'd as
+   PP Editorial New Italic with Libre Baskerville Italic (Google Font) named
+   as the explicit fallback.
+
+   All three are self-hosted here (no external CDN calls at render time —
+   matches this design-system family's existing no-webfont-CDN convention,
+   just satisfied with local files instead of "no webfont at all" since none
+   of these ship with the OS the way Arial does).
+
+   Inter: SIL Open Font License — pulled directly from Google Fonts, single
+   variable file covering weight 100–900 (Light 300 / Regular 400 / Medium
+   500 / Bold 700 all come from this one file).
+   PP Editorial New: licensed commercial font — file supplied by brand owner.
+   Libre Baskerville: SIL Open Font License — file supplied by brand owner.
+   ========================================================================== */
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../assets/fonts/Inter-Variable.woff2") format("woff2-variations"),
+       url("../assets/fonts/Inter-Variable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "PP Editorial New";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/PPEditorialNew-Italic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Libre Baskerville";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../assets/fonts/LibreBaskerville-Italic-VariableFont_wght.ttf") format("truetype-variations"),
+       url("../assets/fonts/LibreBaskerville-Italic-VariableFont_wght.ttf") format("truetype");
+}

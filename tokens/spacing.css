@@ -1,0 +1,23 @@
+/* ==========================================================================
+   Explore Treatment Paths — Spacing tokens
+   ASSUMPTION — the source brand guidelines define color, typography and
+   logo only; spacing/layout is not specified. This is a conservative,
+   whitespace-forward derivation for a calm, easy-to-read patient page.
+   Confirm before production rollout.
+   ========================================================================== */
+
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  --section-y: 80px;      /* vertical rhythm between page sections          */
+  --content-max: 1160px;  /* page/content container max-width              */
+  --prose-max: 700px;     /* comfortable reading measure for body copy      */
+}

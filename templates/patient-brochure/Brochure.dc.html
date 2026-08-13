@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Patient brochure" description="Print-ready unbranded patient-education brochure (US Letter, 1-2 pages) — condition overview, treatment-options overview, questions to ask, sponsorship disclaimer. No device name, logo, or claim belongs in the body content." -->
+<helmet>
+<link rel="stylesheet" href="../../styles.css">
+<script src="./ds-base.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{background:#E9EDF0;font-family:var(--font-body);color:var(--text-body);padding:32px 0}
+.stack{display:flex;flex-direction:column;align-items:center;gap:28px}
+.sheet{position:relative;width:816px;min-height:1056px;background:#fff;box-shadow:var(--shadow-md);padding:56px 64px 90px;display:flex;flex-direction:column}
+[data-orientation="landscape"] .sheet{width:1056px;min-height:816px}
+.doc>*{margin-top:22px}
+.doc>*:first-child{margin-top:0}
+[data-density="compact"] .doc>*{margin-top:13px}
+@media print{body{background:#fff;padding:0}.stack{gap:0}.sheet{box-shadow:none;page-break-after:always}.sheet:last-child{page-break-after:auto}}
+@page{margin:0}
+.brand-row{display:flex;align-items:center;gap:10px}
+.wordmark{font-size:16px;white-space:nowrap;color:var(--text-heading)}
+.wordmark .regular{font-weight:var(--weight-regular)}
+.wordmark .bold{font-weight:var(--weight-bold)}
+</style>
+</helmet>
+<div data-orientation="{{ orientation }}" data-density="{{ density }}">
+<div class="stack">
+<section class="sheet" data-screen-label="Brochure — Page 1">
+<header style="display:flex;align-items:center;justify-content:space-between;padding-bottom:20px;border-bottom:3px solid var(--etp-blue)">
+<div class="brand-row">
+<img src="../../assets/logos/icon.png" alt="Explore Treatment Paths" style="height:32px;width:32px">
+<span class="wordmark"><span class="regular">Explore</span><span class="bold">Treatment</span><span class="regular">Paths.org</span></span>
+</div>
+<p style="margin:0;font-size:11px;font-weight:var(--weight-medium);letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted)">Patient education</p>
+</header>
+<div class="doc" style="flex:1;display:flex;flex-direction:column">
+<div>
+<p class="etp-eyebrow" style="margin:0 0 8px">Education. Empowerment.</p>
+<h1 style="font-family:var(--font-display-accent);font-style:italic;font-weight:var(--weight-regular);color:var(--text-heading);font-size:34px;line-height:1.1;margin:0 0 10px">your path forward</h1>
+<p style="margin:0;font-size:17px;font-weight:var(--weight-bold);line-height:1.4;color:var(--text-heading);max-width:600px">Understanding your [condition] treatment options can help bring clarity when it matters most.</p>
+</div>
+<div>
+<p style="margin:0;font-size:14px;line-height:1.6;color:var(--text-body)">Every journey is unique, and every conversation has the potential to reveal something new. This brochure is a starting point for a conversation with your care team — not a recommendation.</p>
+</div>
+<div style="background:var(--surface-subtle);border-left:4px solid var(--etp-teal);border-radius:2px;padding:18px 22px">
+<p style="margin:0 0 6px;font-size:11px;font-weight:var(--weight-bold);letter-spacing:.1em;text-transform:uppercase;color:var(--text-heading)">What is [condition]?</p>
+<p style="margin:0;font-size:14px;line-height:1.55;color:var(--text-body)">Plain-language overview of the condition — what it is and why understanding options matters. Keep it factual and reassuring.</p>
+</div>
+<div>
+<p style="margin:0 0 10px;font-size:11px;font-weight:var(--weight-bold);letter-spacing:.1em;text-transform:uppercase;color:var(--text-heading)">Treatment approaches to ask about</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+<div>
+<h3 style="font-family:var(--font-body);font-weight:var(--weight-bold);color:var(--text-heading);font-size:16px;margin:0 0 6px">[Treatment category 1]</h3>
+<p style="margin:0;font-size:13px;line-height:1.5;color:var(--text-muted)">Plain-language description of what this approach generally involves.</p>
+</div>
+<div>
+<h3 style="font-family:var(--font-body);font-weight:var(--weight-bold);color:var(--text-heading);font-size:16px;margin:0 0 6px">[Treatment category 2]</h3>
+<p style="margin:0;font-size:13px;line-height:1.5;color:var(--text-muted)">Plain-language description of what this approach generally involves.</p>
+</div>
+</div>
+</div>
+</div>
+<footer style="position:absolute;left:64px;right:64px;bottom:36px;padding-top:14px;border-top:1px solid var(--border-default)">
+<p style="margin:0;font-size:11px;line-height:1.5;color:var(--text-muted)">[Sponsorship disclaimer — exact wording pending Legal/Regulatory confirmation] · {{ pageLabel1 }}</p>
+</footer>
+</section>
+<sc-if value="{{ showPageTwo }}" hint-placeholder-val="{{ true }}">
+<section class="sheet" data-screen-label="Brochure — Page 2">
+<header style="display:flex;align-items:center;justify-content:space-between;padding-bottom:20px;border-bottom:3px solid var(--etp-blue)">
+<div class="brand-row">
+<img src="../../assets/logos/icon.png" alt="Explore Treatment Paths" style="height:32px;width:32px">
+<span class="wordmark"><span class="regular">Explore</span><span class="bold">Treatment</span><span class="regular">Paths.org</span></span>
+</div>
+<p style="margin:0;font-size:11px;font-weight:var(--weight-medium);letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted)">{{ pageLabel2 }}</p>
+</header>
+<div class="doc" style="flex:1;display:flex;flex-direction:column">
+<div>
+<p style="margin:0 0 10px;font-size:11px;font-weight:var(--weight-bold);letter-spacing:.1em;text-transform:uppercase;color:var(--text-heading)">Questions to ask your care team</p>
+<ul style="margin:0;padding:0;list-style:none">
+<li style="position:relative;padding:8px 0 8px 24px;font-size:14px;line-height:1.5;color:var(--text-body)">[Question one patients often ask]<span style="position:absolute;left:0;top:14px;width:8px;height:8px;background:var(--etp-teal);border-radius:2px"></span></li>
+<li style="position:relative;padding:8px 0 8px 24px;font-size:14px;line-height:1.5;color:var(--text-body)">[Question two patients often ask]<span style="position:absolute;left:0;top:14px;width:8px;height:8px;background:var(--etp-teal);border-radius:2px"></span></li>
+<li style="position:relative;padding:8px 0 8px 24px;font-size:14px;line-height:1.5;color:var(--text-body)">[Question three patients often ask]<span style="position:absolute;left:0;top:14px;width:8px;height:8px;background:var(--etp-teal);border-radius:2px"></span></li>
+</ul>
+</div>
+<div>
+<p style="margin:0 0 6px;font-size:11px;font-weight:var(--weight-bold);letter-spacing:.1em;text-transform:uppercase;color:var(--text-heading)">Learn more</p>
+<p style="margin:0;font-size:14px;line-height:1.55;color:var(--text-body)">Visit ExploreTreatmentPaths.org for more information.</p>
+</div>
+</div>
+<footer style="position:absolute;left:64px;right:64px;bottom:36px;padding-top:14px;border-top:1px solid var(--border-default)">
+<p style="margin:0;font-size:11px;line-height:1.5;color:var(--text-muted)">[Sponsorship disclaimer — exact wording pending Legal/Regulatory confirmation] · {{ pageLabel2 }}</p>
+</footer>
+</section>
+</sc-if>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:816,&quot;height&quot;:1056},&quot;orientation&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;portrait&quot;,&quot;landscape&quot;],&quot;default&quot;:&quot;portrait&quot;,&quot;tsType&quot;:&quot;\&quot;portrait\&quot; | \&quot;landscape\&quot;&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;density&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;comfortable&quot;,&quot;compact&quot;],&quot;default&quot;:&quot;comfortable&quot;,&quot;tsType&quot;:&quot;\&quot;comfortable\&quot; | \&quot;compact\&quot;&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;showPageTwo&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const showPageTwo = this.props.showPageTwo ?? true;
+    const pageCount = showPageTwo ? 2 : 1;
+    return {
+      orientation: this.props.orientation ?? "portrait",
+      density: this.props.density ?? "comfortable",
+      showPageTwo,
+      pageLabel1: `Page 1 of ${pageCount}`,
+      pageLabel2: `Page 2 of ${pageCount}`,
+    };
+  }
+}
+</script>
+</body>
+</html>

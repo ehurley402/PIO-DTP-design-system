@@ -1,0 +1,55 @@
+<!-- @dsCard group="Brand" viewport="700x300" name="Logo lockups" subtitle="Icon + coded Inter wordmark — horizontal, stacked, icon-only, on-dark" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; font-family: var(--font-body); background: var(--etp-white); padding: var(--space-5); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+  .tile { border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; height: 120px; gap: 12px; }
+  .on-white { background: var(--etp-white); border: 1px solid var(--border-default); }
+  .on-navy { background: var(--etp-navy); }
+  .wordmark { font-size: 18px; white-space: nowrap; }
+  .wordmark .regular { font-weight: var(--weight-regular); }
+  .wordmark .bold { font-weight: var(--weight-bold); }
+  .caption { font-size: 11px; color: var(--text-muted); text-align: center; margin-top: 6px; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div>
+      <div class="tile on-white">
+        <img src="../assets/logos/icon.png" alt="icon" width="36" height="36">
+        <span class="wordmark" style="color:var(--text-heading)"><span class="regular">Explore</span><span class="bold">Treatment</span><span class="regular">Paths.org</span></span>
+      </div>
+      <p class="caption">Horizontal, on white</p>
+    </div>
+    <div>
+      <div class="tile on-navy">
+        <img src="../assets/logos/icon.png" alt="icon" width="36" height="36">
+        <span class="wordmark" style="color:var(--text-on-inverse)"><span class="regular">Explore</span><span class="bold">Treatment</span><span class="regular">Paths.org</span></span>
+      </div>
+      <p class="caption">Horizontal, on dark (Navy)</p>
+    </div>
+    <div>
+      <div class="tile on-white" style="flex-direction:column;gap:8px">
+        <img src="../assets/logos/icon.png" alt="icon" width="44" height="44">
+        <span class="wordmark" style="color:var(--text-heading)"><span class="regular">Explore</span><span class="bold">Treatment</span><span class="regular">Paths.org</span></span>
+      </div>
+      <p class="caption">Stacked</p>
+    </div>
+    <div>
+      <div class="tile on-white">
+        <img src="../assets/logos/icon.png" alt="icon" width="56" height="56">
+      </div>
+      <p class="caption">Icon only</p>
+    </div>
+  </div>
+  <p style="font-size:11px;color:var(--text-muted);margin-top:var(--space-4);border-top:1px solid var(--border-subtle);padding-top:10px">
+    FLAGGED — only the standalone icon file was supplied as a usable source asset. These lockups reproduce
+    the horizontal / stacked / on-dark arrangements shown in the brand guidelines PDF as coded Inter text,
+    not exported vector files. Replace with real lockup SVGs if/when supplied.
+  </p>
+</body>
+</html>

@@ -1,0 +1,24 @@
+/* ==========================================================================
+   Explore Treatment Paths — Elevation tokens (radius, border, shadow, motion)
+   ASSUMPTION — not specified in the source brand guidelines. The icon mark
+   is soft and rounded (a flowing path, not a geometric/angular form), so
+   this derivation leans slightly rounder than a typical clinical/corporate
+   system — calm and approachable rather than sharp. Confirm before
+   production rollout.
+   ========================================================================== */
+
+:root {
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  --border-thin: 1px;
+
+  --shadow-sm: 0 1px 3px rgba(5, 45, 74, 0.08);
+  --shadow-md: 0 6px 20px rgba(5, 45, 74, 0.12);
+
+  --duration-fast: 160ms;
+  --duration-base: 240ms;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+}
